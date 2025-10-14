@@ -111,6 +111,15 @@
         .category-grid {
           grid-template-columns: 1fr;
         }
+        .recall-item {
+          padding: 1.25rem;
+          min-height: 60px;
+        }
+        .custom-checkbox {
+          width: 28px;
+          height: 28px;
+          min-width: 28px;
+        }
       }
       .recall-item {
         display: flex;
@@ -121,12 +130,16 @@
         border-radius: 12px;
         transition: all 0.3s ease;
         cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
       }
-      /* .recall-item:hover {
-        background: rgba(155, 231, 255, 0.1);
-        border-color: rgba(155, 231, 255, 0.3);
-        transform: translateY(-3px);
-      } */
+      @media (hover: hover) {
+        .recall-item:hover {
+          background: rgba(155, 231, 255, 0.1);
+          border-color: rgba(155, 231, 255, 0.3);
+          transform: translateY(-3px);
+        }
+      }
       .recall-item.checked {
         background: rgba(155, 231, 255, 0.15);
         border-color: var(--primary);
@@ -141,6 +154,7 @@
         cursor: pointer;
         position: relative;
         transition: all 0.3s ease;
+        pointer-events: none;
       }
       .custom-checkbox input {
         opacity: 0;
@@ -171,6 +185,7 @@
         flex: 1;
         font-size: 1.05rem;
         user-select: none;
+        pointer-events: none;
       }
       .btn-group {
         display: flex;
