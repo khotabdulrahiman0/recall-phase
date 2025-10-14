@@ -47,10 +47,10 @@
       }
       .category-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
         margin-bottom: 2rem;
-        max-width: 600px;
+        max-width: 900px;
         margin-left: auto;
         margin-right: auto;
       }
@@ -119,6 +119,11 @@
           width: 28px;
           height: 28px;
           min-width: 28px;
+        }
+      }
+      @media (max-width: 992px) and (min-width: 769px) {
+        .category-grid {
+          grid-template-columns: repeat(2, 1fr);
         }
       }
       .recall-item {
@@ -298,7 +303,13 @@
       <section id="menuSection">
         <div class="category-grid">
         <div class="category-card" onclick="selectCategory('forAll')">
-          <div class="category-title">For All</div>
+          <div class="category-title">For All - Set 1</div>
+          <div class="category-icon"><img src="/images/forAll.png" alt="" srcset=""></div>
+          <div class="category-desc">Open for everyone</div>
+        </div>
+
+        <div class="category-card" onclick="selectCategory('forAllSet2')">
+          <div class="category-title">For All - Set 2</div>
           <div class="category-icon"><img src="/images/forAll.png" alt="" srcset=""></div>
           <div class="category-desc">Open for everyone</div>
         </div>
@@ -348,11 +359,19 @@
           ]
         },
         forAll: {
-          title: "For All",
+          title: "For All - Set 1",
           items: [
             "USA", "India", "China", "Japan", "Brazil", 
             "France", "Germany", "Italy", "Spain", 
             "Canada", "Australia", "Mexico"
+          ]
+        },
+        forAllSet2: {
+          title: "For All - Set 2",
+          items: [
+            "Russia", "UK", "Turkey", "South Korea", "Argentina", 
+            "Egypt", "Thailand", "Netherlands", "Switzerland", 
+            "Sweden", "Belgium", "Portugal"
           ]
         }
       };
